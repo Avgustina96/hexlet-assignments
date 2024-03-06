@@ -3,8 +3,8 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
     application
-    id("org.springframework.boot") version "3.2.0"
     id("io.spring.dependency-management") version "1.1.3"
+    id("org.springframework.boot") version "3.2.0"
     id("com.github.ben-manes.versions") version "0.48.0"
 }
 
@@ -39,8 +39,8 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
     testLogging {
-        events("failed", "passed", "skipped")
         exceptionFormat = TestExceptionFormat.FULL
+        events = mutableSetOf(TestLogEvent.FAILED, TestLogEvent.PASSED, TestLogEvent.SKIPPED)
         showStandardStreams = true
     }
 }
