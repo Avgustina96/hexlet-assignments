@@ -26,6 +26,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-devtools")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-configuration-processor")
+    implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0")
     // implementation("io.sentry:sentry-spring-boot-starter-jakarta:6.28.0")
 
@@ -51,7 +52,6 @@ tasks.test {
         showStandardStreams = true
     }
 }
-
 
 
 
