@@ -35,11 +35,13 @@ dependencies {
     testImplementation("org.hamcrest:hamcrest:2.2")
 }
 
+
 tasks.test {
     useJUnitPlatform()
     testLogging {
+        events("failed", "passed", "skipped")
         exceptionFormat = TestExceptionFormat.FULL
-        events = mutableSetOf(TestLogEvent.FAILED, TestLogEvent.PASSED, TestLogEvent.SKIPPED)
         showStandardStreams = true
     }
 }
+
