@@ -3,7 +3,7 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
     java
-    id("org.springframework.boot") version "3.1.9"
+    id("org.springframework.boot") version "3.2.2"
     id("io.spring.dependency-management") version "1.1.3"
     application
     id("com.github.ben-manes.versions") version "0.48.0"
@@ -33,7 +33,6 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
-    testImplementation("org.springframework.boot:org.springframework.boot.gradle.plugin:3.2.2")
     testImplementation("org.hamcrest:hamcrest:2.2")
 }
 
