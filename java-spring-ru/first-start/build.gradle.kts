@@ -17,13 +17,13 @@ application { mainClass.set("io.hexlet.blog.Application") }
 
 repositories {
     gradlePluginPortal()
-    maven {
-        url = uri("https://artifactory.raiffeisen.ru/artifactory/plugins-gradle")
-        credentials {
-            username = System.getProperty("artifactory_user")
-            password = System.getProperty("artifactory_password")
-        }
-    }
+//    maven {
+//        url = uri("https://artifactory.raiffeisen.ru/artifactory/plugins-gradle")
+//        credentials {
+//            username = System.getProperty("artifactory_user")
+//            password = System.getProperty("artifactory_password")
+//        }
+//    }
 }
 
 dependencies {
