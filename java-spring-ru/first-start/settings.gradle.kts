@@ -3,6 +3,7 @@ rootProject.name = "SpringBootApplication"
 // spring.jpa.hibernate.ddl-auto
 pluginManagement {
     repositories {
+        gradlePluginPortal()
         maven {
             url = uri("https://artifactory.raiffeisen.ru/artifactory/plugins-gradle")
             credentials {
