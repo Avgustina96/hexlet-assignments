@@ -16,7 +16,7 @@ application { mainClass.set("exercise.Application") }
 
 repositories {
     maven {
-        url = uri("https://artifactory.raiffeisen.ru/artifactory/repo1/")
+        url = uri("https://artifactory.raiffeisen.ru/artifactory/remote-mvn")
         credentials {
             username = System.getProperty("artifactory_user")
             password = System.getProperty("artifactory_password")
