@@ -56,7 +56,14 @@ version = "1.0-SNAPSHOT"
 application { mainClass.set("io.hexlet.blog.Application") }
 
 repositories {
-    mavenCentral()
+    gradlePluginPortal()
+    maven {
+        url = uri("https://artifactory.raiffeisen.ru/artifactory/plugins-gradle")
+        credentials {
+            username = System.getProperty("artifactory_user")
+            password = System.getProperty("artifactory_password")
+        }
+    }
 }
 
 dependencies {
