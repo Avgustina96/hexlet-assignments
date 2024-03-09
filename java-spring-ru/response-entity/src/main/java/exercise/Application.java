@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @SpringBootApplication
 @RestController
@@ -24,14 +25,14 @@ public class Application {
         var result = posts.stream().limit(limit).toList();
 
         return ResponseEntity
-                .status(HttpStatus.CREATED)
+                .status(HttpStatus.OK)
                 .header("X-Total-Count", String.valueOf(posts.size()))
                 .body(result);
     }
 
 
     @GetMapping("/posts/{id}") // Вывод страницы
-    public ResponseEntity<?> show(@PathVariable String id) {
+    public ResponseEntity<?> testShow(@PathVariable String id) {
         var page = posts.stream()
                 .filter(p -> p.getId().equals(id))
                 .findFirst();
@@ -45,31 +46,30 @@ public class Application {
     }
 
     @PostMapping("/posts") // Создание страницы
-    public ResponseEntity<Post> create(@RequestBody Post page) {
+    public ResponseEntity create(@RequestBody Post page) {
         posts.add(page);
-        var result = posts.stream();
-
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(page);
     }
 
 
+
     @PutMapping("/posts/{id}") // Обновление страницы
     public ResponseEntity update(@PathVariable String id, @RequestBody Post data) {
-        if (show(id).equals(data)) {
-            for (int i = 0; i < posts.size(); i++) {
-                if (posts.get(i).getId().equals(id)) {
-                    Post page = posts.get(i);
-                    page.setId(data.getId());
-                    page.setBody(data.getBody());
-                    page.setTitle(data.getTitle());
-                }
-            }
-            return ResponseEntity.status(HttpStatus.CREATED).build();
+        Optional<Post> postToUpdate = posts.stream()
+                .filter(post -> post.getId().equals(id))
+                .findFirst();
+        if (postToUpdate.isPresent()) {
+            Post page = postToUpdate.get();
+            page.setId(data.getId());
+            page.setBody(data.getBody());
+            page.setTitle(data.getTitle());
+
+            return ResponseEntity.status(HttpStatus.OK).body(page);
 
         } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         }
     }
 }

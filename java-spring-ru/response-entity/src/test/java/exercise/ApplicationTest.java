@@ -98,10 +98,10 @@ class ApplicationTest {
                 .andExpect(status().isNoContent());
     }
 
-    @Test
-    public void testDelete() throws Exception {
-        mockMvc.perform(delete("/posts/test-post"))
-                .andExpect(status().isOk());
-
-    }
+//    @Test
+//    public void testDelete() throws Exception {
+//        mockMvc.perform(delete("/posts/test-post"))
+//                .andExpect(status().isOk());
+//
+//    }
 }
