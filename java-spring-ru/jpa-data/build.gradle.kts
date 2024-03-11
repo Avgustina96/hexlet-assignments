@@ -6,7 +6,7 @@ plugins {
     id("org.springframework.boot") version "3.2.3"
     id("io.spring.dependency-management") version "1.1.3"
     id("com.github.ben-manes.versions") version "0.48.0"
-    id("io.freefair.lombok") version "8.4"
+    id("io.freefair.lombok") version "8.3"
 }
 
 group = "exercise"
