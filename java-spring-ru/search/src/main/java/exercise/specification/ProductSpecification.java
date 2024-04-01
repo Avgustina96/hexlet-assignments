@@ -1,5 +1,5 @@
-package exercise.specification;
 
+package exercise.specification;
 import exercise.dto.ProductParamsDTO;
 import exercise.model.Product;
 import org.springframework.data.jpa.domain.Specification;
@@ -19,8 +19,8 @@ public class ProductSpecification {
     }
 
     private Specification<Product> withCategoryID(Long categoryID) {
-        return (root, query, cb) -> categoryID == null ?
-                cb.conjunction() : cb.equal(root.get("category").get("id"), categoryID);
+        return (root, query, cb) -> categoryID == null ? cb.conjunction() : cb.equal(root.get("category").get("id"),
+                categoryID);
     }
 
     private Specification<Product> withPriceGt(Integer price) {
@@ -38,4 +38,5 @@ public class ProductSpecification {
     private Specification<Product> withTitleCont(String title) {
         return (root, query, cb) -> title == null ? cb.conjunction() : cb.equal(root.get("title"), title);
     }
+
 }
