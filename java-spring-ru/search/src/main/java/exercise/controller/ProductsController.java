@@ -1,8 +1,10 @@
 package exercise.controller;
 
-import java.util.List;
+import exercise.dto.ProductParamsDTO;
+import exercise.dto.ProductDTO;
+import exercise.dto.ProductUpdateDTO;
+import exercise.dto.ProductCreateDTO;
 
-import exercise.dto.*;
 import exercise.mapper.ProductMapper;
 import exercise.specification.ProductSpecification;
 import org.springframework.beans.factory.annotation.Autowired;
