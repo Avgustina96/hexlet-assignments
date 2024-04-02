@@ -1,5 +1,5 @@
-
 package exercise.specification;
+
 import exercise.dto.ProductParamsDTO;
 import exercise.model.Product;
 import org.springframework.data.jpa.domain.Specification;
