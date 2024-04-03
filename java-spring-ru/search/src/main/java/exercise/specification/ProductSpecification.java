@@ -1,15 +1,15 @@
 package exercise.specification;
 
+
 import exercise.dto.ProductParamsDTO;
 import exercise.model.Product;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 
 
-@Component // Для возможности автоматической инъекции
+@Component
 public class ProductSpecification {
-    // Генерация спецификации на основе параметров внутри DTO
-    // Для удобства каждый фильтр вынесен в свой метод
+
     public Specification<Product> build(ProductParamsDTO params) {
         return withCategoryID(params.getCategoryId())
                 .and(withPriceGt(params.getPriceGt()))
