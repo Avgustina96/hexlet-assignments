@@ -1,9 +1,10 @@
-package exercise.specification;
 
+package exercise.specification;
 import exercise.dto.ProductParamsDTO;
 import exercise.model.Product;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
+
 
 @Component
 public class ProductSpecification {
@@ -46,4 +47,3 @@ public class ProductSpecification {
                 : cb.like(cb.lower(root.get("title")), "%" + substring + "%");
     }
 }
-
