@@ -46,3 +46,4 @@ public class ProductSpecification {
                 : cb.like(cb.lower(root.get("title")), "%" + substring + "%");
     }
 }
+
